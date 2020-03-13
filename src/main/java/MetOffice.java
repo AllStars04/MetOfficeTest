@@ -57,11 +57,10 @@ public class MetOffice extends JFrame {
         //conversion of string values to integer
         int todayValue = Integer.parseInt(todayHumidity);
         int tomorrowValue = Integer.parseInt(tomorrowHumidity);
-
-        //difference of humidity level between today and tomorrow
-        System.out.print("The Humidity difference for " + city + " between " + currentDate + " and " + nextDayDate + " is = ");
-        System.out.print(tomorrowValue - todayValue);
         int difference = tomorrowValue - todayValue;
+
+        //printing of difference of humidity level between Today and Tomorrow
+        System.out.print("The Humidity difference for " + city + " between " + currentDate + " and " + nextDayDate + " is = " + difference);
         JOptionPane.showMessageDialog(null, "The Humidity difference for " + city + " between " + currentDate + " and " + nextDayDate + " is = " + difference);
         driver.quit();
         {
