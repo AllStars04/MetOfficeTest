@@ -22,7 +22,6 @@ public class MetOffice extends JFrame {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.get(url);
         driver.manage().window().maximize();
-
         try {
             driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div[1]/button")).click();
             driver.findElement(By.xpath("//*[@id=\"location-search-input\"]")).sendKeys(city);
