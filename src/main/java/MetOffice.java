@@ -24,8 +24,10 @@ public class MetOffice extends JFrame {
         driver.manage().window().maximize();
         try {
             driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div[1]/button")).click();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.findElement(By.xpath("//*[@id=\"location-search-input\"]")).sendKeys(city);
             driver.findElement(By.xpath("//*[@id=\"location-search-submit\"]/span")).click();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.findElement(By.id("btnDetailedView")).click();
         } catch (Exception e) {
             System.out.println("Exception in handling the Web Elements");
@@ -47,6 +49,7 @@ public class MetOffice extends JFrame {
         c.add(Calendar.DATE, 1); //same with c.add(Calendar.DAY_OF_MONTH, 1);
         // convert calendar to date
         Date nextDayDate = c.getTime();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@id=\"dayLink" + dateFormat.format(nextDayDate) + "\"]/div[2]/div[1]/h3/time")).click();
 
         //storage of tomorrow's humidity level
